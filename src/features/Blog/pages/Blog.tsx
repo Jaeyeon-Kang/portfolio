@@ -1,6 +1,7 @@
 import InfiniteScroll from "../components/InfiniteScroll";
 import Pagination from "../components/Pagination";
 import Modal from "../components/Modal";
+import SignUpForm from "../components/SignUpForm";
 import { useState, ReactNode } from "react";
 
 const Blog = () => {
@@ -10,6 +11,7 @@ const Blog = () => {
     { id: 1, title: "Pagination" },
     { id: 2, title: "Infinite Scroll" },
     { id: 3, title: "Modal" },
+    { id: 4, title: "Sign Up Form" },
   ];
 
   const handleMenu = (id: number) => {
@@ -24,6 +26,8 @@ const Blog = () => {
         return <InfiniteScroll />;
       case 3:
         return <Modal />;
+      case 4:
+        return <SignUpForm />;
       default:
         return null;
     }
