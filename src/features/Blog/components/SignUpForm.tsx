@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const SignUpForm = () => {
   const [formValues, setFormValues] = useState({
@@ -62,9 +62,7 @@ const SignUpForm = () => {
   };
 
   const handleChange = (e) => {
-    console.log(e.target);
     const { id, value } = e.target;
-    console.log({ id, value });
     const updatedValues = { ...formValues, [id]: value };
     setFormValues(updatedValues);
     if (isSubmitted) {
@@ -76,14 +74,10 @@ const SignUpForm = () => {
     e.preventDefault();
     setIsSubmitted(true);
     if (validate()) {
-      console.log(`validate(): , ${validate()}`);
       alert("회원가입이 완료되었습니다!");
     }
   };
 
-  useEffect(() => {
-    console.log(formValues);
-  }, [formValues]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">

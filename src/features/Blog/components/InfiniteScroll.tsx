@@ -2,14 +2,8 @@ import React, { useEffect } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { fetchPokemonData } from "../api/pokemon";
-
-interface Poke {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  baseExperience: number;
-}
+import { Pokemon } from "../../../types/pokemon";
+import PokemonTable from "../../../components/PokemonTable";
 
 const InfiniteScroll: React.FC = () => {
   const { ref, inView } = useInView();
@@ -18,7 +12,7 @@ const InfiniteScroll: React.FC = () => {
     useInfiniteQuery({
       queryKey: ["items"],
       queryFn: ({ pageParam = 0 }: { pageParam?: number }) =>
-        fetchPokemonData<Poke>({
+        fetchPokemonData<Pokemon>({
           url: "https://pokeapi.co/api/v2/pokemon/",
           pageParam, // getNextPageParam에서 반환된 값을 다음 호출에 전달
           limit: pageParam === 0 ? 30 : 10,
@@ -40,65 +34,21 @@ const InfiniteScroll: React.FC = () => {
     }
   }, [inView, fetchNextPage]);
 
-  return status === "pending" ? (
-    <div>Loading...</div>
-  ) : status === "error" ? (
-    <div>{(error as Error)?.message}</div>
-  ) : (
+  if (status === "pending") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "error") {
+    return <div>{(error as Error)?.message}</div>;
+  }
+
+  const allPokemon = data?.pages.flatMap((page) => page.data) || [];
+
+  return (
     <div className="p-4 max-w-screen-lg mx-auto">
       <h1 className="text-2xl font-bold mb-4 text-center">Pokémon Table</h1>
 
-      <div className="relative overflow-x-auto">
-        <table className="table-auto border-collapse border border-gray-300 w-full text-center shadow-lg rounded-lg">
-          <thead>
-            <tr className="bg-blue-200">
-              <th className="border border-gray-300 px-4 py-2 w-1/12 text-sm">
-                ID
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-2/12 text-sm">
-                Name
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-3/12 text-sm">
-                Height
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-3/12 text-sm">
-                Weight
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-3/12 text-sm">
-                Base Experience
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.pages.map((page, index) => (
-              <React.Fragment key={index}>
-                {page.data.map((poke) => (
-                  <tr
-                    key={poke.id}
-                    className="hover:bg-gray-100 transition duration-200"
-                  >
-                    <td className="border border-gray-300 px-4 py-2">
-                      {poke.id}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2 capitalize">
-                      {poke.name}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {poke.height}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {poke.weight}
-                    </td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {poke.baseExperience}
-                    </td>
-                  </tr>
-                ))}
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <PokemonTable pokemon={allPokemon} />
 
       <div ref={ref} className="mt-4 text-center">
         {isFetchingNextPage && "Fetching more data..."}

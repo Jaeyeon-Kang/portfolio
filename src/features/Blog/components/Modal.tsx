@@ -1,7 +1,8 @@
-import { ReactNode, useState, useRef } from "react";
+import { ReactNode, useState } from "react";
 import { X } from "react-feather";
 import { fetchPokemonData } from "../api/pokemon";
 import { useQuery } from "@tanstack/react-query";
+import { PokemonWithImage } from "../../../types/pokemon";
 
 interface ModalComponentProps {
   open: boolean;
@@ -39,20 +40,11 @@ const ModalComponent = ({ open, onClose, children }: ModalComponentProps) => {
   );
 };
 
-interface Poke {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  baseExperience: number;
-  image: string;
-}
-
 const Modal: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [selectedPokemon, setSelectedPokemon] = useState<Poke | null>(null);
+  const [selectedPokemon, setSelectedPokemon] = useState<PokemonWithImage | null>(null);
 
-  const handlePokemonClick = (pokemon: Poke) => {
+  const handlePokemonClick = (pokemon: PokemonWithImage) => {
     setSelectedPokemon(pokemon);
     setOpen(true);
   };
@@ -60,7 +52,7 @@ const Modal: React.FC = () => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["pokemons"],
     queryFn: () =>
-      fetchPokemonData<Poke>({
+      fetchPokemonData<PokemonWithImage>({
         url: "https://pokeapi.co/api/v2/pokemon/",
         pageParam: 0,
         limit: 3, // 3개 데이터만 가져오기

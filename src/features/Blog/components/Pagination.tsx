@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { fetchPokemonData } from "../api/pokemon";
+import { Pokemon } from "../../../types/pokemon";
+import PokemonTable from "../../../components/PokemonTable";
 
 const TOTAL_POKEMON = 100; // 전체 포켓몬 수 제한
 const POKEMON_PER_PAGE = 10; // 한 페이지당 포켓몬 수
 const PAGES_PER_GROUP = 5; // 페이지 그룹당 표시할 페이지 수
 const POKEMON_API_URL = "https://pokeapi.co/api/v2/pokemon/";
-
-interface Pokemon {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  baseExperience: number;
-}
 
 const Pagination: React.FC = () => {
   const [currentPokemon, setCurrentPokemon] = useState<Pokemon[]>([]); // 현재 페이지의 포켓몬 데이터
@@ -80,51 +74,7 @@ const Pagination: React.FC = () => {
     <div className="p-4 max-w-screen-lg mx-auto">
       <h1 className="text-2xl font-bold mb-4 text-center">Pokémon Table</h1>
 
-      <div className="relative overflow-x-auto">
-        <table className="table-auto border-collapse border  border-gray-300 w-full text-center shadow-lg rounded-lg">
-          <thead>
-            <tr className="bg-blue-200">
-              <th className="border border-gray-300 px-4 py-2 w-1/12 text-sm">
-                ID
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-2/12 text-sm">
-                Name
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-3/12 text-sm">
-                Height
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-3/12 text-sm">
-                Weight
-              </th>
-              <th className="border border-gray-300 px-4 py-2 w-3/12 text-sm">
-                Base Experience
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentPokemon.map((poke) => (
-              <tr
-                key={poke.id}
-                className="hover:bg-gray-100 transition duration-200"
-              >
-                <td className="border border-gray-300 px-4 py-2">{poke.id}</td>
-                <td className="border border-gray-300 px-4 py-2 capitalize">
-                  {poke.name}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {poke.height}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {poke.weight}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {poke.baseExperience}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <PokemonTable pokemon={currentPokemon} />
 
       {/* 페이지네이션 버튼 */}
       <div className="flex justify-center mt-4 space-x-2">
