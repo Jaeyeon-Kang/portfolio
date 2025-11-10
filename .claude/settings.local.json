@@ -6,7 +6,9 @@
       "Bash(taskkill:*)",
       "Bash(git remote set-url:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: configure for GitHub Pages deployment\n\n- Add GitHub Actions workflow for automatic deployment\n- Configure Vite base path for portfolio repository\n- Set up build and deployment pipeline\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: configure for GitHub Pages deployment\n\n- Add GitHub Actions workflow for automatic deployment\n- Configure Vite base path for portfolio repository\n- Set up build and deployment pipeline\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "WebFetch(domain:jaeyeon-kang.github.io)"
     ],
     "deny": [],
     "ask": []
