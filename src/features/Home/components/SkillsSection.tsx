@@ -1,74 +1,19 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import SectionHeader from "../../../components/SectionHeader";
+import { skillGroups, skillLevelLabels } from "../../../data/skills";
 
-type SkillLevel = "Expert" | "Proficient" | "Familiar" | "Learning";
-
-interface Skill {
-  name: string;
-  level: SkillLevel;
-}
-
-interface SkillGroup {
-  category: string;
-  skills: Skill[];
-}
-
-const skillGroups: SkillGroup[] = [
-  {
-    category: "Frontend",
-    skills: [
-      { name: "React.js", level: "Expert" },
-      { name: "JavaScript/TypeScript", level: "Proficient" },
-      { name: "HTML/CSS", level: "Expert" },
-      { name: "Next.js", level: "Familiar" },
-      { name: "Tailwind CSS", level: "Proficient" },
-      { name: "Framer Motion", level: "Familiar" },
-    ],
-  },
-  {
-    category: "Backend & Database",
-    skills: [
-      { name: "Node.js", level: "Proficient" },
-      { name: "Spring/Spring Boot", level: "Familiar" },
-      { name: "MySQL/MariaDB", level: "Familiar" },
-      { name: "REST API", level: "Proficient" },
-    ],
-  },
-  {
-    category: "Desktop & Tools",
-    skills: [
-      { name: "Electron.js", level: "Proficient" },
-      { name: "Git/SVN", level: "Proficient" },
-      { name: "Figma", level: "Familiar" },
-      { name: "GCP/Firebase", level: "Familiar" },
-    ],
-  },
-  {
-    category: "AI & Learning",
-    skills: [
-      { name: "OpenAI API", level: "Learning" },
-      { name: "LangChain", level: "Learning" },
-    ],
-  },
-];
-
-const levelColors: Record<SkillLevel, string> = {
-  Expert: "bg-cyan-500",
-  Proficient: "bg-cyan-600",
-  Familiar: "bg-slate-600",
-  Learning: "bg-slate-700",
-};
+const levelColors = {
+  expert: "bg-cyan-500",
+  proficient: "bg-cyan-600",
+  familiar: "bg-slate-600",
+  learning: "bg-slate-700",
+} as const;
 
 const SkillsSection = () => {
-  const { t } = useTranslation();
-  
-  const levelLabels: Record<SkillLevel, string> = {
-    Expert: t("skills.levels.expert"),
-    Proficient: t("skills.levels.proficient"),
-    Familiar: t("skills.levels.familiar"),
-    Learning: t("skills.levels.learning"),
-  };
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language as "ko" | "en";
+
   return (
     <section className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -84,7 +29,7 @@ const SkillsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillGroups.map((skillGroup, idx) => (
             <motion.div
-              key={skillGroup.category}
+              key={skillGroup.category.ko}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
@@ -92,7 +37,7 @@ const SkillsSection = () => {
               className="space-y-4"
             >
               <h3 className="text-lg font-semibold text-white mb-6 pb-2 border-b border-slate-800">
-                {skillGroup.category}
+                {skillGroup.category[currentLang]}
               </h3>
               <div className="space-y-3">
                 {skillGroup.skills.map((skill) => (
@@ -103,7 +48,7 @@ const SkillsSection = () => {
                         levelColors[skill.level]
                       } text-white`}
                     >
-                      {levelLabels[skill.level]}
+                      {skillLevelLabels[skill.level][currentLang]}
                     </span>
                   </div>
                 ))}

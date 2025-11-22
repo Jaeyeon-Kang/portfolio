@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { GitHub, BookOpen, Phone } from "react-feather";
 import { useTranslation } from "react-i18next";
+import { profile } from "../../../data/profile";
 
 const ContactSection = () => {
   const { t } = useTranslation();
@@ -26,15 +27,15 @@ const ContactSection = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:bellaglittery@gmail.com"
+              href={`mailto:${profile.email}`}
               className="px-8 py-3.5 bg-white text-slate-900 rounded-lg font-semibold hover:bg-cyan-50 transition-colors shadow-lg flex items-center gap-2"
             >
-              bellaglittery@gmail.com
+              {profile.email}
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              href="https://github.com/Jaeyeon-Kang"
+              href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3.5 border-2 border-slate-700 rounded-lg font-semibold hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center gap-2"
@@ -45,7 +46,7 @@ const ContactSection = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              href="https://just-coding.tistory.com"
+              href={profile.techBlog}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3.5 border-2 border-slate-700 rounded-lg font-semibold hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center gap-2"
@@ -66,7 +67,7 @@ const ContactSection = () => {
               {showPhone ? (
                 <p className="flex items-center justify-center gap-2">
                   <Phone size={16} />
-                  010-7560-1791
+                  {profile.phone}
                 </p>
               ) : (
                 <button

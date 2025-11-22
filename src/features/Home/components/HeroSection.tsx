@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { profile } from "../../../data/profile";
 
 const HeroSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language as "ko" | "en";
 
   return (
     <motion.section
@@ -43,7 +45,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {t("hero.name")}
+          {profile.name[currentLang]}
         </motion.h1>
 
         <motion.div
@@ -53,12 +55,12 @@ const HeroSection = () => {
           className="space-y-4 mb-12"
         >
           <p className="text-xl md:text-2xl font-light text-slate-300 tracking-wide">
-            {t("hero.title")}
+            {profile.title[currentLang]}
           </p>
           <div className="flex items-center justify-center gap-3">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500" />
             <p className="text-lg md:text-xl text-cyan-400 font-medium">
-              {t("hero.subtitle")}
+              {profile.subtitle[currentLang]}
             </p>
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500" />
           </div>
@@ -70,7 +72,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12"
         >
-          {t("hero.description")}
+          {profile.intro[currentLang].quote}
         </motion.p>
 
         <motion.div
