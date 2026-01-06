@@ -217,6 +217,50 @@ export const projects: Project[] = [
   // 개인 프로젝트 (Side Projects)
   {
     title: {
+      ko: "4J - 행사장 수용인원 자동계산",
+      en: "4J - Venue Capacity Calculator",
+    },
+    company: {
+      ko: "개인 프로젝트",
+      en: "Personal Project",
+    },
+    period: "2026.01",
+    description: {
+      ko: "AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스",
+      en: "AI-based venue capacity calculator and real-time congestion monitoring service",
+    },
+    achievements: {
+      ko: [
+        "Google Gemini AI를 활용한 도면 이미지 분석 시스템 구현 (부스 개수, 출입구, 면적 자동 추정)",
+        "행사장 유형별(스탠딩/연회형/극장형/교실형) 수용인원 계산 알고리즘 설계 및 비상구 처리량 기반 안전 인원 산출 로직 구현",
+        "실시간 혼잡도 모니터링 시스템: 5단계 레벨 시각화(쾌적~위험), 갱신 주기 선택(1분/10분/1시간), Level 3 이상 시 경고 알림 기능",
+        "Material UI 기반 반응형 UI/UX 설계 및 카카오톡 알림 미리보기 목업 구현",
+        "Next.js 16 + TypeScript + Tailwind CSS 4 기반 모던 프론트엔드 아키텍처 구축",
+      ],
+      en: [
+        "Implemented floor plan image analysis system using Google Gemini AI (automatic estimation of booth count, entrances, and area)",
+        "Designed capacity calculation algorithm by venue type (standing/banquet/theater/classroom) and implemented safety capacity calculation logic based on emergency exit throughput",
+        "Real-time congestion monitoring system: 5-level visualization (comfortable~dangerous), refresh interval selection (1min/10min/1hour), warning alerts for Level 3+",
+        "Designed responsive UI/UX based on Material UI and implemented KakaoTalk notification preview mockup",
+        "Built modern frontend architecture based on Next.js 16 + TypeScript + Tailwind CSS 4",
+      ],
+    },
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Material UI",
+      "Google Gemini AI",
+    ],
+    type: "side",
+    status: "completed",
+    links: {
+      url: "https://4j-mgqp.vercel.app/",
+      github: "https://github.com/Jaeyeon-Kang/4j",
+    },
+  },
+  {
+    title: {
       ko: "AI 기반 알고리즘 트레이딩 시스템",
       en: "AI-based Algorithm Trading System",
     },
