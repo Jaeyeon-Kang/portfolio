@@ -246,11 +246,10 @@ export const projects: Project[] = [
       ],
     },
     tech: [
+      "Google Gemini AI",
       "Next.js",
       "TypeScript",
-      "Tailwind CSS",
       "Material UI",
-      "Google Gemini AI",
     ],
     type: "side",
     status: "completed",
