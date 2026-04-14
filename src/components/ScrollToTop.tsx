@@ -28,7 +28,7 @@ const ScrollToTop = () => {
       }}
       transition={{ duration: 0.2 }}
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-40 p-3 bg-cyan-500 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-colors"
+      className="fixed bottom-8 right-8 z-40 p-3 bg-slate-900 text-white rounded-full shadow-lg hover:bg-slate-700 transition-colors"
       aria-label="맨 위로 가기"
     >
       <ArrowUp size={24} />

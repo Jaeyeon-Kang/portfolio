@@ -9,12 +9,12 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ titleKey }) => {
   const { t } = useTranslation();
   
   return (
-    <>
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+    <div className="mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
         {t(titleKey)}
       </h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 mb-16" />
-    </>
+      <div className="w-12 h-0.5 bg-blue-600" />
+    </div>
   );
 };
 

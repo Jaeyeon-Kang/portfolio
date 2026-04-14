@@ -20,11 +20,11 @@ const Home = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white"
+      className="bg-white text-slate-900"
     >
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-500 origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-0.5 bg-slate-900 origin-left z-50"
         style={{ scaleX: scrollYProgress }}
       />
 

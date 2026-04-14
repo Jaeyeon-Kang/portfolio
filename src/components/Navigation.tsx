@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./LanguageToggle";
+import { profile } from "../data/profile";
 
 const sections = [
   { id: "hero", labelKey: "nav.home" },
@@ -57,16 +58,16 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800/50"
+      className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80"
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div
-            className="text-white font-bold text-lg cursor-pointer"
+            className="text-slate-900 font-bold text-lg cursor-pointer"
             onClick={() => scrollToSection("hero")}
             whileHover={{ scale: 1.05 }}
           >
-            {t("hero.name")}
+            {profile.name[i18n.language as "ko" | "en"]}
           </motion.div>
 
           <div className="hidden md:flex items-center gap-1">
@@ -76,8 +77,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection(section.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   activeSection === section.id
-                    ? "text-cyan-400 bg-slate-800"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-slate-500 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 {t(section.labelKey)}

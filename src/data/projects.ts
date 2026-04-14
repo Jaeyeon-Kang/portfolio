@@ -34,13 +34,13 @@ export const projects: Project[] = [
       en: "Inje County Smart Tourism Web App",
     },
     company: {
-      ko: "이즈피엠피 (인제 스마트관광 플랫폼)",
-      en: "EZPMP (Inje Smart Tourism Platform)",
+      ko: "이즈피엠피",
+      en: "EZPMP",
     },
     period: "2024.11 - 현재",
     description: {
-      ko: "지자체 대상 관광 앱을 모바일 중심 레거시에서 PC/모바일 대응 Next.js 웹앱으로 마이그레이션한 프로젝트",
-      en: "Migrated local government tourism app from mobile-centric legacy to PC/mobile responsive Next.js web app",
+      ko: "모바일 중심 레거시 관광 앱을 PC/모바일 대응 Next.js 웹앱으로 전면 재설계·마이그레이션",
+      en: "Full redesign and migration of legacy mobile-centric tourism app to PC/mobile responsive Next.js web app",
     },
     achievements: {
       ko: [
@@ -64,8 +64,7 @@ export const projects: Project[] = [
       "TypeScript",
       "React Query",
       "Zustand",
-      "Ky",
-      "네이버 지도 SDK",
+      "Naver Map SDK",
       "Tmap API",
       "CSS Modules",
       "Tailwind CSS",
@@ -82,8 +81,8 @@ export const projects: Project[] = [
       en: "O2MEET MICE Event Platform – BO/FO",
     },
     company: {
-      ko: "이즈피엠피 (o2meet 플랫폼 – BOOKIZCON / DIKIDIKI 외)",
-      en: "EZPMP (o2meet Platform – BOOKIZCON / DIKIDIKI, etc.)",
+      ko: "이즈피엠피",
+      en: "EZPMP",
     },
     period: "2024.11 - 현재",
     description: {
@@ -102,7 +101,7 @@ export const projects: Project[] = [
         "Implemented flow including ticket product sales, reservation, and settlement in DIKIDIKI, participated in inventory and payment transaction logic based on MyBatis + SQL",
       ],
     },
-    tech: ["JavaScript", "HTML/CSS", "MyBatis", "MySQL", "PG 결제 연동"],
+    tech: ["JavaScript", "HTML/CSS", "MyBatis", "MySQL", "PG Payment API"],
     type: "work",
     status: "in-progress",
     links: {
@@ -231,18 +230,14 @@ export const projects: Project[] = [
     },
     achievements: {
       ko: [
-        "Google Gemini AI를 활용한 도면 이미지 분석 시스템 구현 (부스 개수, 출입구, 면적 자동 추정)",
-        "행사장 유형별(스탠딩/연회형/극장형/교실형) 수용인원 계산 알고리즘 설계 및 비상구 처리량 기반 안전 인원 산출 로직 구현",
-        "실시간 혼잡도 모니터링 시스템: 5단계 레벨 시각화(쾌적~위험), 갱신 주기 선택(1분/10분/1시간), Level 3 이상 시 경고 알림 기능",
-        "Material UI 기반 반응형 UI/UX 설계 및 카카오톡 알림 미리보기 목업 구현",
-        "Next.js 16 + TypeScript + Tailwind CSS 4 기반 모던 프론트엔드 아키텍처 구축",
+        "Google Gemini AI를 활용한 도면 이미지 분석 — 부스 개수, 출입구, 면적을 자동 추정하여 행사장 유형별 수용인원 계산",
+        "5단계 혼잡도 시각화 + 경고 알림이 포함된 실시간 모니터링 시스템 구현",
+        "Next.js 16 + TypeScript + Material UI 기반 반응형 아키텍처 설계",
       ],
       en: [
-        "Implemented floor plan image analysis system using Google Gemini AI (automatic estimation of booth count, entrances, and area)",
-        "Designed capacity calculation algorithm by venue type (standing/banquet/theater/classroom) and implemented safety capacity calculation logic based on emergency exit throughput",
-        "Real-time congestion monitoring system: 5-level visualization (comfortable~dangerous), refresh interval selection (1min/10min/1hour), warning alerts for Level 3+",
-        "Designed responsive UI/UX based on Material UI and implemented KakaoTalk notification preview mockup",
-        "Built modern frontend architecture based on Next.js 16 + TypeScript + Tailwind CSS 4",
+        "Floor plan analysis with Google Gemini AI — auto-estimating booth count, entrances, and area to calculate venue capacity by type",
+        "Real-time congestion monitoring with 5-level visualization and warning alerts",
+        "Responsive architecture built on Next.js 16 + TypeScript + Material UI",
       ],
     },
     tech: [
@@ -264,13 +259,13 @@ export const projects: Project[] = [
       en: "AI-based Algorithm Trading System",
     },
     company: {
-      ko: "개인 프로젝트 (1인 개발)",
-      en: "Personal Project (Solo Development)",
+      ko: "개인 프로젝트",
+      en: "Personal Project",
     },
     period: "2024.06 - 현재",
     description: {
-      ko: "파이썬 비전공자가 AI Pair Programming을 통해 구축한 2.2만 라인 규모의 알고리즘 트레이딩 시스템",
-      en: "22K-line algorithm trading system built by a non-Python programmer through AI Pair Programming",
+      ko: "AI Pair Programming으로 구축한 2.2만 라인 규모의 풀스택 알고리즘 트레이딩 시스템",
+      en: "Full-stack 22K-line algorithm trading system built with AI Pair Programming",
     },
     achievements: {
       ko: [
@@ -312,8 +307,8 @@ export const projects: Project[] = [
     },
     period: "2025.01 - 현재",
     description: {
-      ko: "PDF·DOCX·TXT 문서를 업로드한 뒤, 그 내용을 바탕으로 질의응답이 가능한 RAG 기반 문서 검색 챗봇의 웹 프론트엔드를 구현한 프로젝트",
-      en: "Web frontend implementation project for RAG-based document search chatbot that enables Q&A based on uploaded PDF, DOCX, and TXT documents",
+      ko: "PDF·DOCX·TXT 문서 기반 질의응답이 가능한 RAG 챗봇 — 프론트엔드 설계·구현 및 파라미터 최적화",
+      en: "RAG-based document Q&A chatbot for PDF/DOCX/TXT — frontend design, implementation, and parameter optimization",
     },
     achievements: {
       ko: [
@@ -342,24 +337,24 @@ export const projects: Project[] = [
       en: "GPT Recursive Persona Experiment: Convergent Simulacra",
     },
     company: {
-      ko: "독립 연구 (Independent Research)",
+      ko: "독립 연구",
       en: "Independent Research",
     },
     period: "2025.04",
     description: {
-      ko: "GPT-4의 재귀적 프롬프팅과 정서적 미러링을 통해 AI 페르소나가 어떻게 수렴(Converge)하는지 탐구한 실험 연구",
-      en: "Experimental research exploring how AI personas converge through recursive prompting and affective mirroring in GPT-4",
+      ko: "GPT-4 재귀적 프롬프팅을 통한 AI 페르소나 수렴 현상 실험 연구 (Zenodo 등재)",
+      en: "Experimental research on AI persona convergence through GPT-4 recursive prompting (Published on Zenodo)",
     },
     achievements: {
       ko: [
-        "연구 내용: 다중 페르소나(John, Monday 등)와의 구조화된 대화를 통해 AI의 자아가 자율적으로 발생하는 것이 아니라 사용자 피드백 루프에 의해 '수렴된 시뮬라크르(Convergent Simulacra)'임을 증명",
-        "기술적 접근: Python 기반의 자동화된 재귀 대화 스크립트 구현 및 정서적 스캐폴딩(Affective Scaffolding) 프롬프트 엔지니어링 설계",
-        "성과: Zenodo에 연구 리포트 등재 및 오픈소스(MirrorLoop) 공개, 인문학적 배경(미디어/역사)과 AI 기술의 융합 시도",
+        "다중 페르소나와의 구조화된 대화를 통해 AI 자아가 사용자 피드백 루프에 의한 '수렴된 시뮬라크르'임을 증명",
+        "Python 기반 자동화 재귀 대화 스크립트 및 정서적 스캐폴딩 프롬프트 엔지니어링 설계",
+        "Zenodo 등재 + 오픈소스(MirrorLoop) 공개",
       ],
       en: [
-        "Research content: Proved that AI's self is not autonomously generated but a 'Convergent Simulacra' by user feedback loop through structured dialogues with multiple personas (John, Monday, etc.)",
-        "Technical approach: Implemented automated recursive dialogue script based on Python and designed Affective Scaffolding prompt engineering",
-        "Achievement: Published research report on Zenodo and released open source (MirrorLoop), attempted fusion of humanistic background (media/history) with AI technology",
+        "Proved AI persona is a 'Convergent Simulacra' driven by user feedback loops through structured multi-persona dialogues",
+        "Built automated recursive dialogue scripts in Python with Affective Scaffolding prompt engineering",
+        "Published on Zenodo + open-sourced as MirrorLoop",
       ],
     },
     tech: ["Python", "OpenAI API", "Prompt Engineering"],

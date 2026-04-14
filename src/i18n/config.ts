@@ -26,11 +26,14 @@ const ko = {
     title: "Skills & Technologies",
   },
   work: {
-    title: "Work Experience",
+    title: "Projects",
     completed: "완료",
     inProgress: "진행중",
     achievements: "주요 성과",
     tech: "기술 스택",
+    workProjects: "실무 프로젝트",
+    sideProjects: "사이드 프로젝트",
+    researchProjects: "연구 & 출판",
   },
   education: {
     title: "Education",
@@ -39,7 +42,7 @@ const ko = {
     title: "Let's Connect",
     description: "새로운 기회와 협업에 열려있습니다. 언제든지 연락주세요.",
     showPhone: "전화번호 보기",
-    copyright: "© 2025 강재연. All rights reserved.",
+    copyright: "© 2026 강재연. All rights reserved.",
   },
 };
 
@@ -68,11 +71,14 @@ const en = {
     title: "Skills & Technologies",
   },
   work: {
-    title: "Work Experience",
+    title: "Projects",
     completed: "Completed",
     inProgress: "In Progress",
     achievements: "Key Achievements",
     tech: "Tech Stack",
+    workProjects: "Work Projects",
+    sideProjects: "Side Projects",
+    researchProjects: "Research & Publications",
   },
   education: {
     title: "Education",
@@ -81,7 +87,7 @@ const en = {
     title: "Let's Connect",
     description: "Open to new opportunities and collaboration. Feel free to contact me anytime.",
     showPhone: "Show Phone Number",
-    copyright: "© 2025 Jaeyeon Kang. All rights reserved.",
+    copyright: "© 2026 Jaeyeon Kang. All rights reserved.",
   },
 };
 

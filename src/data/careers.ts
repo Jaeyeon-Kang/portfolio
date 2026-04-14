@@ -16,7 +16,7 @@ export interface Career {
 
 export const careers: Career[] = [
   {
-    period: "2024.11 - 2025.12",
+    period: "2024.11 - 현재",
     company: {
       ko: "이즈피엠피 (EZPMP)",
       en: "EZPMP",
@@ -26,8 +26,8 @@ export const careers: Career[] = [
       en: "Senior Frontend Developer",
     },
     description: {
-      ko: "스마트관광 웹앱과 MICE 행사 플랫폼의 프론트엔드 개발 및 기존 웹 시스템의 Next.js 마이그레이션 담당",
-      en: "Responsible for frontend development of Smart Tourism web apps and MICE event platforms, and Next.js migration of existing web systems",
+      ko: "스마트관광 웹앱(인제군)과 MICE 행사 플랫폼(O2MEET)의 프론트엔드 설계·개발, 레거시 시스템 Next.js 마이그레이션 주도",
+      en: "Led frontend architecture and development of Smart Tourism web app (Inje County) and MICE event platform (O2MEET), driving legacy-to-Next.js migration",
     },
   },
   {
@@ -41,38 +41,8 @@ export const careers: Career[] = [
       en: "Frontend Developer",
     },
     description: {
-      ko: "콜센터 인프라 소프트웨어(CTI, 통계, 소프트폰)와 사내 메신저·소프트폰 등 데스크탑 앱의 프론트엔드를 담당",
-      en: "Responsible for frontend of call center infrastructure software (CTI, statistics, softphone) and desktop apps including internal messenger and softphone",
-    },
-  },
-  {
-    period: "2020.08 - 2021.11",
-    company: {
-      ko: "한국농수산유통식품공사",
-      en: "Korea Agro-Fisheries & Food Trade Corporation",
-    },
-    position: {
-      ko: "PD",
-      en: "PD",
-    },
-    description: {
-      ko: "기업 대상 광고 영상 기획, 제작, 조감독 등의 역할 수행",
-      en: "Responsible for planning, production, and assistant directing of corporate advertising videos",
-    },
-  },
-  {
-    period: "2016.03 - 2020.04",
-    company: {
-      ko: "Photography & Marketing (해외)",
-      en: "Photography & Marketing (Overseas)",
-    },
-    position: {
-      ko: "Freelancer",
-      en: "Freelancer",
-    },
-    description: {
-      ko: "패션기업 대상으로 마케팅 전략 수립 & 사진 촬영 업무",
-      en: "Marketing strategy development and photography for fashion companies",
+      ko: "콜센터 인프라(CTI, 통계, 소프트폰) 및 Electron 기반 데스크탑 앱(메신저, 소프트폰) 프론트엔드 개발",
+      en: "Developed frontend for call center infrastructure (CTI, statistics, softphone) and Electron-based desktop apps (messenger, softphone)",
     },
   },
 ];

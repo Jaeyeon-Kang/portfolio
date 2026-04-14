@@ -21,23 +21,24 @@ export const skillGroups: SkillGroup[] = [
     },
     skills: [
       { name: "React.js", level: "expert" },
-      { name: "JavaScript/TypeScript", level: "proficient" },
-      { name: "HTML/CSS", level: "expert" },
       { name: "Next.js", level: "proficient" },
+      { name: "TypeScript", level: "proficient" },
+      { name: "HTML/CSS", level: "expert" },
       { name: "Tailwind CSS", level: "proficient" },
-      { name: "Framer Motion", level: "familiar" },
+      { name: "Zustand / React Query", level: "proficient" },
     ],
   },
   {
     category: {
-      ko: "Backend & Database",
-      en: "Backend & Database",
+      ko: "Backend & Infra",
+      en: "Backend & Infra",
     },
     skills: [
       { name: "Node.js", level: "proficient" },
-      { name: "Spring/Spring Boot", level: "familiar" },
-      { name: "MySQL/MariaDB", level: "familiar" },
-      { name: "REST API", level: "proficient" },
+      { name: "Python / FastAPI", level: "familiar" },
+      { name: "MySQL / PostgreSQL", level: "familiar" },
+      { name: "Docker", level: "familiar" },
+      { name: "GitLab CI/CD / ArgoCD", level: "familiar" },
     ],
   },
   {
@@ -47,19 +48,19 @@ export const skillGroups: SkillGroup[] = [
     },
     skills: [
       { name: "Electron.js", level: "proficient" },
-      { name: "Git/SVN", level: "proficient" },
+      { name: "Git", level: "proficient" },
       { name: "Figma", level: "familiar" },
-      { name: "GCP/Firebase", level: "familiar" },
     ],
   },
   {
     category: {
-      ko: "AI & Learning",
-      en: "AI & Learning",
+      ko: "AI & Data",
+      en: "AI & Data",
     },
     skills: [
-      { name: "LLM API 활용 (예: OpenAI API)", level: "familiar" },
-      { name: "RAG / 벡터 검색 패턴", level: "familiar" },
+      { name: "OpenAI / Gemini API", level: "proficient" },
+      { name: "RAG / Vector Search", level: "familiar" },
+      { name: "Prompt Engineering", level: "proficient" },
     ],
   },
 ];
