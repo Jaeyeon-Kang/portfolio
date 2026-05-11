@@ -44,7 +44,7 @@ export const profile: Profile = {
   email: "bellaglittery@gmail.com",
   phone: "010-7560-1791",
   github: "https://github.com/Jaeyeon-Kang",
-  techBlog: "https://just-coding.tistory.com",
+  techBlog: "https://thisiscodingblog.tistory.com",
   aiBlog: "https://medium.com/@mirrorloop",
   intro: {
     ko: {
